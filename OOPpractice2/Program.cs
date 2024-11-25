@@ -10,14 +10,12 @@ namespace OOPpractice2
     {
         static void Main(string[] args)
         {
-            //Warrior warrior1 = new Warrior("Agiduz", health: 100, maxAttack: 25, maxBlock: 40);
-            //Warrior warrior2 = new Warrior("Betalus", health: 100, maxAttack: 50, maxBlock: 10);
-
-            Warrior warrior1 = new Warrior("Agiduz", health: 100, maxAttack: 25, maxBlock: 200);
-            Warrior warrior2 = new Warrior("Betalus", health: 1000, maxAttack: 50, maxBlock: 0);
-            //Warrior warrior1 = new Warrior("Agiduz");
-            //Warrior warrior2 = new Warrior("Betalus");
-            Warrior result = Game.Fight(warrior1, warrior2);
+     
+            Hero_Magik magik = new Hero_Magik();
+            Hero_Wielgus wielgus = new Hero_Wielgus();
+            Hero_Zwinny zwinny = new Hero_Zwinny();
+            
+            Hero result = Game.Fight(wielgus, zwinny);
             Console.WriteLine("Winner");
             Console.WriteLine(result.Name);
             Console.ReadLine();

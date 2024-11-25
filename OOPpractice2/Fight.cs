@@ -6,15 +6,15 @@ namespace OOPpractice2
 {
     public class Game
     {
-        public static Warrior Fight(Warrior warrior1, Warrior warrior2)
+        public static Hero Fight(Hero warrior1, Hero warrior2)
         {
-            Warrior[] warriors = new Warrior[] {warrior1, warrior2};
+            Hero[] warriors = new Hero[] {warrior1, warrior2};
             Random random = new Random();
             int index = random.Next(0, warriors.Length);
             //Console.WriteLine("index: "+index);
             //Console.WriteLine("length: "+warriors.Length);
-            Warrior first = warriors[index];
-            Warrior second = warriors[(warriors.Length - 1) - index];
+            Hero first = warriors[index];
+            Hero second = warriors[(warriors.Length - 1) - index];
             
             Console.WriteLine("firts:\n" + first);
             Console.WriteLine("second:\n" + second);
@@ -32,7 +32,7 @@ namespace OOPpractice2
         }
 
 
-        public static bool Combat(Warrior warrior_attck, Warrior warrior_def)
+        public static bool Combat(Hero warrior_attck, Hero warrior_def)
         {
             int attack = 0;
             int block = 0;
@@ -56,7 +56,7 @@ namespace OOPpractice2
         }
 
 
-        private static bool IsWinner(Warrior warrior)
+        private static bool IsWinner(Hero warrior)
         {
             if (warrior.Health < 0)
                 return true;

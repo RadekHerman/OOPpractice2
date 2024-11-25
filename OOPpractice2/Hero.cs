@@ -2,7 +2,7 @@
 
 namespace OOPpractice2
 {
-    public class Warrior
+    public abstract class Hero
     {
         public string Name { get; set; }
         public int Health { get; set; } 
@@ -12,13 +12,13 @@ namespace OOPpractice2
 
         static private Random random = new Random();
 
-        public Warrior(string name = "Warrior", int health = 100, int maxAttack = 10, int maxBlock = 5, string specialSkill = "")
+        public Hero(string name = "Hero", int health = 0, int maxAttack = 0, int maxBlock = 0)
         {
             Name = name;
             Health = health;
             MaxAttack = maxAttack;
             MaxBlock = maxBlock;
-            SpecialSkill = specialSkill;
+          
         }
 
         public override string ToString()
@@ -28,13 +28,11 @@ namespace OOPpractice2
 
         public int AttackStrength()
         {
-            //Random random = new Random();
             return random.Next(1, MaxAttack);
         }
 
         public int BlockStrength()
         {
-            //Random random = new Random();
             return random.Next(0, MaxBlock);
         }
     }
