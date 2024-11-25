@@ -1,6 +1,7 @@
 ﻿using System;
 
 
+
 namespace OOPpractice2
 {
     public class Game
@@ -17,62 +18,45 @@ namespace OOPpractice2
             
             Console.WriteLine("firts:\n" + first);
             Console.WriteLine("second:\n" + second);
-            //Warrior winner;
 
-            Console.WriteLine($"Warrior {first.Name} will attack first");
-            Warrior winner = Result(first, second);
-            
-            return winner;
+            while (true)
+            {
+                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXx");
+                if (Combat(first, second))
+                    return first;
+
+                if (Combat(second, first))
+                    return second;
+
+            }
         }
 
 
-        public static Warrior Result(Warrior first, Warrior second)
+        public static bool Combat(Warrior warrior_attck, Warrior warrior_def)
         {
             int attack = 0;
             int block = 0;
             int damage = 0;
 
-            while (true)
-            {
-                //isWinner = Winner(first, second);
-
-                attack = AttackStrength(first);
-
-                block = BlockStrength(second);
+                attack = warrior_attck.AttackStrength();
+                block = warrior_def.BlockStrength();    
+                Console.WriteLine($"attack {attack} block {block}");
                 damage = attack - block;
+                damage = damage < 0 ? 0 : damage;
 
-                second.Health = second.Health - damage;
+                warrior_def.Health = warrior_def.Health - damage;
 
-                Console.WriteLine($"{first.Name} did {damage} damage to {second.Name}");
+                Console.WriteLine($"{warrior_attck.Name} did {damage} damage to {warrior_def.Name}");   
+                Console.WriteLine($"Bronicy się: {warrior_def}");
 
-                if (IsWinner(second))
-                    return first;
 
-                attack = AttackStrength(second);
-                block = BlockStrength(first);
-
-                first.Health = first.Health - damage;
-
-                Console.WriteLine($"{second.Name} did {damage} damage to {first.Name}");
-
-                if (IsWinner(first))
-                    return second;
-              
-            }
-        }
-        public static int AttackStrength (Warrior warrior)
-        {
-            Random random = new Random();
-            return random.Next(1, warrior.MaxAttack);
+                if (warrior_def.Health < 0) 
+                    return true;
+                else return false;
         }
 
-        public static int BlockStrength (Warrior warrior)
-        {
-            Random random = new Random();
-            return random.Next(0, warrior.MaxBlock);
-        }
 
-        public static bool IsWinner(Warrior warrior)
+        private static bool IsWinner(Warrior warrior)
         {
             if (warrior.Health < 0)
                 return true;

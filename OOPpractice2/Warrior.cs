@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOPpractice2
 {
@@ -13,6 +9,8 @@ namespace OOPpractice2
         public int MaxAttack { get; set; }
         public int MaxBlock { get; set; }
         public string SpecialSkill { get; set; }
+
+        static private Random random = new Random();
 
         public Warrior(string name = "Warrior", int health = 100, int maxAttack = 10, int maxBlock = 5, string specialSkill = "")
         {
@@ -26,6 +24,18 @@ namespace OOPpractice2
         public override string ToString()
         {
             return $"Warrior: {Name}\tHealth: {Health}\tMax Attack: {MaxAttack}\tMAx Block {MaxBlock}";
+        }
+
+        public int AttackStrength()
+        {
+            //Random random = new Random();
+            return random.Next(1, MaxAttack);
+        }
+
+        public int BlockStrength()
+        {
+            //Random random = new Random();
+            return random.Next(0, MaxBlock);
         }
     }
 }
