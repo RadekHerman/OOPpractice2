@@ -10,11 +10,11 @@ namespace OOPpractice2
     {
         public string Name { get; set; }
         public int Health { get; set; } 
-        public double MaxAttack { get; set; }
-        public double MaxBlock { get; set; }
+        public int MaxAttack { get; set; }
+        public int MaxBlock { get; set; }
         public string SpecialSkill { get; set; }
 
-        public Warrior(string name = "Warrior", int health = 100, double maxAttack = 10, double maxBlock = 10, string specialSkill = "")
+        public Warrior(string name = "Warrior", int health = 100, int maxAttack = 10, int maxBlock = 5, string specialSkill = "")
         {
             Name = name;
             Health = health;

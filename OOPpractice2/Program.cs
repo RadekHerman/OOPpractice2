@@ -10,9 +10,10 @@ namespace OOPpractice2
     {
         static void Main(string[] args)
         {
-            Warrior warrior1 = new Warrior("V");
-            Warrior warrior2 = new Warrior("X");
-            string result = Game.Fight(warrior1, warrior2);
+            Warrior warrior1 = new Warrior("Agiduz");
+            Warrior warrior2 = new Warrior("Betalus");
+            Warrior result = Game.Fight(warrior1, warrior2);
+            Console.WriteLine("Winner");
             Console.WriteLine(result);
             Console.ReadLine();
         }
