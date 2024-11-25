@@ -11,7 +11,8 @@ namespace OOPpractice2
         // dodać spell,np:
         // max hit 50, 
         // full black 
-        public Hero_Magik(string name = "Magic Warrior", int health = 70, int maxAttack = 10, int maxBlock = 5) 
+        public Hero_Magik(string name = "Magic Warrior", int health = 70, int maxAttack = 10, int maxBlock = 5)
+            :base(name, health, maxAttack, maxBlock) 
         {
         }
     }

@@ -9,6 +9,7 @@ namespace OOPpractice2
     public class Hero_Zwinny : Hero
     {
         public Hero_Zwinny(string name = "Zwinny", int health = 100, int maxAttack = 25, int maxBlock = 200)
+            : base(name, health, maxAttack, maxBlock)
         { 
         }
     }
