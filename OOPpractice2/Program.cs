@@ -7,18 +7,23 @@ namespace OOPpractice2
     {
         static void Main(string[] args)
         {
-     
+
             Hero_Magik magik = new Hero_Magik();
             Hero_Wielgus wielgus = new Hero_Wielgus();
             Hero_Zwinny zwinny = new Hero_Zwinny();
             Hero_Wojownik wojownik = new Hero_Wojownik();
-            
-            // Hero result = Game.Fight(wielgus, zwinny);
-            //Hero result = Game.Fight(wojownik, zwinny);
-            Hero result = Game.Fight(wielgus, wojownik, 1, 2 );
+
+            string result;
+            result = Game.Fight(wielgus, zwinny, 1 , 3);
+            //result = Game.Fight(wojownik, zwinny, 1, 1);
+            //result = Game.Fight(wielgus, wojownik, 1, 3);
+
+
+            //result = Game.Fight(wielgus, wojownik, 50, 110);
+            // result = Game.Fight(wielgus, zwinny, 50, 50);
 
             Console.WriteLine("Winner");
-            Console.WriteLine(result.Name);
+            Console.WriteLine(result); 
             Console.ReadLine();
         }
     }
