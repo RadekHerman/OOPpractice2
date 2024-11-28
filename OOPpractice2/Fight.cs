@@ -66,7 +66,7 @@ namespace OOPpractice2
             int block = 0;
             int damage = 0;
 
-            attack = hero_attack.AttackStrength();
+            attack = hero_attack.AttackStrength(hero_def);
             block = hero_def.BlockStrength();
             Console.WriteLine($"{hero_attack.Name}  attack: {attack} // {hero_def.Name} block {block}");
             damage = attack - block;

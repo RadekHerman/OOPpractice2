@@ -25,12 +25,13 @@ namespace OOPpractice2
             return $"Warrior: {Name}\tHealth: {Health}\tMax Attack: {MaxAttack}\tMAx Block {MaxBlock}";
         }
 
-        public int AttackStrength()
+        public virtual int AttackStrength(Hero hero_def)
         {
+
             return random.Next(1, MaxAttack);
         }
 
-        public int BlockStrength()
+        public virtual int BlockStrength()
         {
             return random.Next(0, MaxBlock);
         }

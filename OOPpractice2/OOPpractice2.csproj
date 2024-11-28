@@ -52,6 +52,7 @@
     <Compile Include="Hero.cs" />
     <Compile Include="Hero_Wielgus.cs" />
     <Compile Include="Hero_Zwinny.cs" />
+    <Compile Include="SpecialSkills.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
