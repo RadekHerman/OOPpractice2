@@ -16,11 +16,11 @@ namespace OOPpractice2
             string result;
             // result = Game.Fight(magik, zwinny, 1, 1);
             // result = Game.Fight(magik, wojownik, 1, 1);
-            result = Game.Fight(magik, wielgus, 1, 1);
+            //result = Game.Fight(magik, wielgus, 1, 1);
 
-            //result = Game.Fight(wielgus, zwinny, 1 , 3);
+            result = Game.Fight(wielgus, zwinny, 1 , 1);
             //result = Game.Fight(wojownik, zwinny, 1, 1);
-            //result = Game.Fight(wielgus, wojownik, 1, 3);
+            // result = Game.Fight(wielgus, wojownik, 1, 3);
 
 
             //result = Game.Fight(wielgus, wojownik, 50, 110);

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
+
 
 namespace OOPpractice2
 {
@@ -17,7 +11,7 @@ namespace OOPpractice2
         private static Random random = new Random();
 
         // public string[] Spell {get;} = { "No Spell", "Full Block", "Power Hit", "Instant Death", "Extra Turn" };
-        public Hero_Magik(string name = "Magic Warrior", int health = 75, int maxAttack = 11, int maxBlock = 6, int unitHealth = 75,
+        public Hero_Magik(string name = "Magic Warrior", int health = 75, int maxAttack = 16, int maxBlock = 6, int unitHealth = 75,
             string[] attack_spell = null, string[] defence_spell = null)
             :base(name, health, maxAttack, maxBlock, unitHealth) 
         {
@@ -38,8 +32,15 @@ namespace OOPpractice2
             }
             else if (choice == 5)
             {
-                Console.WriteLine("Magik cast spell: Instant Death");
-                return 666;
+                if (random.Next(0, 2) == 0)
+                {
+                    Console.WriteLine("Magik cast spell: Instant Death");
+                    return 666;
+                }
+                else
+                {
+                    return choice * 10;
+                }
             }
             else if ((choice == 1) || (choice == 2) || (choice == 4))
             {
@@ -62,15 +63,15 @@ namespace OOPpractice2
         {
             int choice = random.Next(0, MaxBlock);
 
-            if (choice < 2)
+            if (choice < 3)
             {
                 Console.WriteLine("Magik cast spell: Power Block");
                 return 1000;
             }
             else if ((choice == 7)) 
             {
-                Console.WriteLine("Magik cast spell: Health Plus, and gets 20 health");
-                Health = Health + 20;
+                Console.WriteLine("Magik cast spell: Health Plus, and gets 50% health");
+                Health = Health * (int)1.5m;
                 return choice;
             }
 

@@ -47,12 +47,13 @@
     <Compile Include="Fight.cs" />
     <Compile Include="Hero_Magik.cs" />
     <Compile Include="Hero_Wojownik.cs" />
+    <Compile Include="IPowerHit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Hero_Wielgus.cs" />
     <Compile Include="Hero_Zwinny.cs" />
-    <Compile Include="SpecialSkills.cs" />
+    <Compile Include="IPowerBlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

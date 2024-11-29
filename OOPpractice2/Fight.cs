@@ -32,6 +32,13 @@ namespace OOPpractice2
                     Console.WriteLine($"Attack: {i}");
                     if (Combat(first, second))
                         return $"{first.Name} after {round} rounds";
+
+                    if (IsExtraTurn(random.Next(2, 10)))
+                    {
+                        Console.WriteLine($"{first.Name} gest bonus attack turn");
+                        i--;
+                    }
+
                 }
 
                 decimal second_health_and_qty_check = ((decimal)second.Health / second.UnitHealth) + 0.99m;
@@ -57,6 +64,12 @@ namespace OOPpractice2
             }
         }
 
+        static bool IsExtraTurn(int random)
+        {
+            Console.WriteLine(random);
+            if (random == 3) return true;
+            else return false;
+        }
 
         public static bool Combat(Hero hero_attack, Hero hero_def)
         {

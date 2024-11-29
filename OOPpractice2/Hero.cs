@@ -30,12 +30,24 @@ namespace OOPpractice2
         public virtual int AttackStrength(Hero hero_def)
         {
 
+            if (this is IPowerHit powerHitObject)
+            {
+                return powerHitObject.PowerHit();
+                
+            }
             return random.Next(1, MaxAttack);
         }
 
         public virtual int BlockStrength()
+
         {
+            if (this is IPowerBlock powerHitObject)
+            {
+                return powerHitObject.PowerBlock();
+
+            }
             return random.Next(0, MaxBlock);
         }
+
     }
 }
