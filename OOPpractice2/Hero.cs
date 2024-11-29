@@ -5,19 +5,21 @@ namespace OOPpractice2
     public abstract class Hero
     {
         public string Name { get; set; }
-        public int Health { get; set; } 
+        public int Health { get; set; }
+
+        public readonly int UnitHealth;
         public int MaxAttack { get; set; }
         public int MaxBlock { get; set; }
 
         static private Random random = new Random();
 
-        public Hero(string name = "Hero", int health = 0, int maxAttack = 0, int maxBlock = 0)
+        public Hero(string name = "Hero", int health = 0, int maxAttack = 0, int maxBlock = 0, int unitHealth = 0)
         {
             Name = name;
             Health = health;
             MaxAttack = maxAttack;
             MaxBlock = maxBlock;
-          
+            UnitHealth = unitHealth;
         }
 
         public override string ToString()

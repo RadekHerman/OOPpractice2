@@ -14,17 +14,15 @@ namespace OOPpractice2
             int index = random.Next(0, warriors.Length);
             Hero first = warriors[index];
             int first_qty = warriors_qty[index];
-            int first_unit_health = first.Health;  // potrzbujmy do zlicznia ilości pozostałych bohaterów danej klasy
 
             Hero second = warriors[(warriors.Length - 1) - index];
             int second_qty = warriors_qty[(warriors_qty.Length - 1) - index];
-            int second_unit_health = second.Health; // potrzbujmy do zlicznia ilości pozostałych bohaterów danej klasy
-
+           
             Console.WriteLine($"first: {first}, qty: {first_qty}");
             Console.WriteLine($"second: {second}, qty: {second_qty}");
 
-            first.Health = first.Health * first_qty;   // na razie grupuję bohatareów we wspólną ilośc health
-            second.Health = second.Health * second_qty; // na razie grupuję bohatareów we wspólną ilośc health
+            first.Health = first.UnitHealth * first_qty;   // na razie grupuję bohatareów we wspólną ilośc health
+            second.Health = second.UnitHealth * second_qty; // na razie grupuję bohatareów we wspólną ilośc health
             int round = 1;
             while (true)
             {
@@ -36,7 +34,7 @@ namespace OOPpractice2
                         return $"{first.Name} after {round} rounds";
                 }
 
-                decimal second_health_and_qty_check = ((decimal)second.Health / second_unit_health) + 0.99m;
+                decimal second_health_and_qty_check = ((decimal)second.Health / second.UnitHealth) + 0.99m;
                 second_qty = (int)second_health_and_qty_check;
 
                 Console.WriteLine(">>>>>>>>>>>");
@@ -49,7 +47,7 @@ namespace OOPpractice2
                         return $"{second.Name} after {round} rounds";
                 }
                 
-                decimal first_health_and_qty_check = ((decimal)first.Health / first_unit_health) + 0.99m;
+                decimal first_health_and_qty_check = ((decimal)first.Health / first.UnitHealth) + 0.99m;
                 first_qty = (int)first_health_and_qty_check;
 
                 Console.WriteLine(">>>>>>>>>>>");
@@ -69,8 +67,17 @@ namespace OOPpractice2
             attack = hero_attack.AttackStrength(hero_def);
             block = hero_def.BlockStrength();
             Console.WriteLine($"{hero_attack.Name}  attack: {attack} // {hero_def.Name} block {block}");
-            damage = attack - block;
-            damage = damage < 0 ? 0 : damage;
+
+            if (attack == 666)  // case of Magik instant death spell
+            {
+                damage = hero_def.UnitHealth;
+                hero_def.Health = hero_def.Health - damage;
+            }
+            else
+            {
+                damage = attack - block;
+                damage = damage < 0 ? 0 : damage;
+            }
 
             hero_def.Health = hero_def.Health - damage;
 

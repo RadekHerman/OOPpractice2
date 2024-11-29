@@ -8,8 +8,8 @@ namespace OOPpractice2
 {
     public class Hero_Wojownik : Hero
     {
-        public Hero_Wojownik (string name = "Wojownik", int health = 150, int maxAttack = 40, int maxBlock = 40) : 
-            base (name, health, maxAttack, maxBlock )
+        public Hero_Wojownik (string name = "Wojownik", int health = 150, int maxAttack = 41, int maxBlock = 41, int unitHealth = 150) : 
+            base (name, health, maxAttack, maxBlock, unitHealth )
         {
 
         }

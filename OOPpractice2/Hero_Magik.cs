@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,58 +17,69 @@ namespace OOPpractice2
         private static Random random = new Random();
 
         // public string[] Spell {get;} = { "No Spell", "Full Block", "Power Hit", "Instant Death", "Extra Turn" };
-        public Hero_Magik(string name = "Magic Warrior", int health = 75, int maxAttack = 10, int maxBlock = 5, 
+        public Hero_Magik(string name = "Magic Warrior", int health = 75, int maxAttack = 11, int maxBlock = 6, int unitHealth = 75,
             string[] attack_spell = null, string[] defence_spell = null)
-            :base(name, health, maxAttack, maxBlock) 
+            :base(name, health, maxAttack, maxBlock, unitHealth) 
         {
-            Attack_spell = attack_spell ?? new string[] { "No Spell", "Health_Suck", "Power Hit", "Instant Death", "Extra Turn" };
+            Attack_spell = attack_spell ?? new string[] { "No Spell", "Health_Suck", "Power Hit", "Instant Death" };
             Defence_spell = defence_spell ?? new string[] { "No Spell", "Full Block", "Health Plus 20"};
         }
 
         public override int AttackStrength(Hero hero_def)
         {
-            string attack_spell = AtackSpellName();
-            return 10;
-        }
-
-        private static string AtackSpellName()
-        {
-            int count = 0; // for instant death need to choose once again
-            string attack_spell = "No Spell";
+            //int count = 0; // podwója próba przy instant death ??
+            string attack_spell = "Magik did not manage to sccesfully cast a spell this time";
+            //string attack_spell = AtackSpellName();
             int choice = random.Next(0, 10);
-            switch(choice)
+            if ((choice == 9) || (choice == 6))
             {
-                case 0:
-                case 1:
-                case 7:
-                    attack_spell = "No Spell";
-                    break;
-                case 2:
-                case 3:
-                    attack_spell = "Health_Suck";
-                    break;
-                case 4:
-                case 5:
-                     attack_spell = "Power Hit";
-                    break;
-
-                case 6:
-                    if (count == 0)
-                    {
-                        count++;
-                        AtackSpellName();
-                    }
-                    
-                    attack_spell = "Power Hit";
-                    break;
-                    
-                case 8:
-                    break;
-
-
-
+                Console.WriteLine("Magik cast spell: Power HIT");
+                return (random.Next(2, MaxAttack) * 10);
             }
-            return attack_spell;
+            else if (choice == 5)
+            {
+                Console.WriteLine("Magik cast spell: Instant Death");
+                return 666;
+            }
+            else if ((choice == 1) || (choice == 2) || (choice == 4))
+            {
+                int suck = random.Next(10, 40);
+                hero_def.Health = hero_def.Health - suck;
+                Health = Health + suck;
+                Console.WriteLine($"Magik cast spell: Health Suck, {hero_def.Name} losing {suck} Health.");
+                Console.WriteLine($"And gets another hit");
+                return 10;
+            }
+            else
+            {
+                Console.WriteLine(attack_spell);
+                return random.Next(0, MaxAttack);
+            }
+            
         }
+
+        public override int BlockStrength()
+        {
+            int choice = random.Next(0, MaxBlock);
+
+            if (choice < 2)
+            {
+                Console.WriteLine("Magik cast spell: Power Block");
+                return 1000;
+            }
+            else if ((choice == 7)) 
+            {
+                Console.WriteLine("Magik cast spell: Health Plus, and gets 20 health");
+                Health = Health + 20;
+                return choice;
+            }
+
+            else
+            {
+                return choice;
+            }
+            
+        }
+
     }
 }
