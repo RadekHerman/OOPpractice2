@@ -3,14 +3,14 @@
 
 namespace OOPpractice2
 {
-    public class Hero_Magik : Hero
+    public class HeroMagik : Hero
     {
         public string[] Attack_spell { get; set; }
         public string[] Defence_spell { get; set; }
 
         private static Random random = new Random();
 
-        public Hero_Magik(string name = "Magic Warrior", int health = 75, int maxAttack = 16, int maxBlock = 6, int unitHealth = 75,
+        public HeroMagik(string name = "Magic Warrior", int health = 75, int maxAttack = 16, int maxBlock = 6, int unitHealth = 75,
             string[] attack_spell = null, string[] defence_spell = null)
             :base(name, health, maxAttack, maxBlock, unitHealth) 
         {

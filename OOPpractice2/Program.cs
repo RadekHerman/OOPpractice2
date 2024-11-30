@@ -8,16 +8,16 @@ namespace OOPpractice2
         static void Main(string[] args)
         {
 
-            Hero_Magik magik = new Hero_Magik();
-            Hero_Wielgus wielgus = new Hero_Wielgus();
-            Hero_Zwinny zwinny = new Hero_Zwinny();
-            Hero_Wojownik wojownik = new Hero_Wojownik();
+            HeroMagik magik = new HeroMagik();
+            HeroWielgus wielgus = new HeroWielgus();
+            HeroZwinny zwinny = new HeroZwinny();
+            HeroWojownik wojownik = new HeroWojownik();
 
             string result;
 
             // fits is attacking, second defending
 
-            // result = Game.Fight(magik, zwinny, 1, 4);
+             result = Game.Fight(magik, zwinny, 1, 4);
             // result = Game.Fight(magik, wojownik, 1, 1);
             // result = Game.Fight(magik, wielgus, 1, 1);
 

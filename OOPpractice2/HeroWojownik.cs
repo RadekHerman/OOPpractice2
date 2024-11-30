@@ -3,10 +3,10 @@ using System;
 
 namespace OOPpractice2
 {
-    public class Hero_Wojownik : Hero,IPowerHit, IPowerBlock
+    public class HeroWojownik : Hero,IPowerHit, IPowerBlock
     {
         static private Random random = new Random();
-        public Hero_Wojownik (string name = "Wojownik", int health = 150, int maxAttack = 51, int maxBlock = 41, int unitHealth = 150) : 
+        public HeroWojownik (string name = "Wojownik", int health = 150, int maxAttack = 51, int maxBlock = 41, int unitHealth = 150) : 
             base (name, health, maxAttack, maxBlock, unitHealth )
         {
 
