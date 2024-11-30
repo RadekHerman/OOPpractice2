@@ -14,17 +14,28 @@ namespace OOPpractice2
             Hero_Wojownik wojownik = new Hero_Wojownik();
 
             string result;
-            // result = Game.Fight(magik, zwinny, 1, 1);
+
+            // kto atakuje a kto sie broni ędzie miało znaczenie,
+            // zatem usune losowanie kto ma pierwszą rundę
+            // 
+
+            result = Game.Fight(magik, zwinny, 1, 4);
             // result = Game.Fight(magik, wojownik, 1, 1);
-            //result = Game.Fight(magik, wielgus, 1, 1);
-
-            result = Game.Fight(wielgus, zwinny, 1 , 1);
-            //result = Game.Fight(wojownik, zwinny, 1, 1);
-            // result = Game.Fight(wielgus, wojownik, 1, 3);
+            // result = Game.Fight(magik, wielgus, 1, 1);
 
 
-            //result = Game.Fight(wielgus, wojownik, 50, 110);
-            // result = Game.Fight(wielgus, zwinny, 50, 50);
+            //result = Game.Fight(zwinny, wojownik, 1, 1);
+            // result = Game.Fight(zwinny, magik, 1, 1);
+            // result = Game.Fight(zwinny, wielkus, 1,1);
+
+            // result = Game.Fight(wielgus, zwinny, 1 , 2);
+            // result = Game.Fight(wielgus, wojownik, 1, 1);
+            // result = Game.Fight(wielgus, magik, 1, 1);
+            // result = Game.Fight(wielgus, wielgus, 1, 1);
+
+            // result = Game.Fight(wojownik, zwinny, 1 , 1);
+            // result = Game.Fight(wojownik, magik, 1, 1);
+            // result = Game.Fight(wojownik, wielgus, 1, 1);
 
             Console.WriteLine("Winner");
             Console.WriteLine(result); 

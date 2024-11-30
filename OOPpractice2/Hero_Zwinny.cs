@@ -23,8 +23,6 @@ namespace OOPpractice2
             else return rnd;
         }
 
-        ///  not impelemente yet
-        ///  
         public int PowerBlock()
         {
             int rnd = random.Next(0, MaxBlock);
