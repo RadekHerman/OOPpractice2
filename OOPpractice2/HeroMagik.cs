@@ -5,22 +5,22 @@ namespace OOPpractice2
 {
     public class HeroMagik : Hero
     {
-        public string[] Attack_spell { get; set; }
-        public string[] Defence_spell { get; set; }
+        public string[] AttackSpell { get; set; }
+        public string[] DefenceSpell { get; set; }
 
         private static Random random = new Random();
 
         public HeroMagik(string name = "Magic Warrior", int health = 75, int maxAttack = 16, int maxBlock = 6, int unitHealth = 75,
-            string[] attack_spell = null, string[] defence_spell = null)
+            string[] attackSpell = null, string[] defenceSpell = null)
             :base(name, health, maxAttack, maxBlock, unitHealth) 
         {
-            Attack_spell = attack_spell ?? new string[] { "No Spell", "Health_Suck", "Power Hit", "Instant Death" };
-            Defence_spell = defence_spell ?? new string[] { "No Spell", "Full Block", "Health Plus 20"};
+            AttackSpell = attackSpell ?? new string[] { "No Spell", "Health_Suck", "Power Hit", "Instant Death" };
+            DefenceSpell = defenceSpell ?? new string[] { "No Spell", "Full Block", "Health Plus 20"};
         }
 
-        public override int AttackStrength(Hero hero_def)
+        public override int AttackStrength(Hero heroDefence)
         {
-            string attack_spell = "Magik did not manage to sccesfully cast a spell this time";
+            string attackSpell = "Magik did not manage to sccesfully cast a spell this time";
             int choice = random.Next(0, 10);
             if ((choice == 9) || (choice == 6))
             {
@@ -42,15 +42,15 @@ namespace OOPpractice2
             else if ((choice == 1) || (choice == 2) || (choice == 4))
             {
                 int suck = random.Next(10, 40);
-                hero_def.Health = hero_def.Health - suck;
+                heroDefence.Health = heroDefence.Health - suck;
                 Health = Health + suck;
-                Console.WriteLine($"Magik cast spell: Health Suck, {hero_def.Name} losing {suck} Health.");
+                Console.WriteLine($"Magik cast spell: Health Suck, {heroDefence.Name} losing {suck} Health.");
                 Console.WriteLine($"And gets another hit");
                 return 10;
             }
             else
             {
-                Console.WriteLine(attack_spell);
+                Console.WriteLine(attackSpell);
                 return random.Next(0, MaxAttack);
             }
             
