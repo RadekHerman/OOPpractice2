@@ -10,7 +10,6 @@ namespace OOPpractice2
 
         private static Random random = new Random();
 
-        // public string[] Spell {get;} = { "No Spell", "Full Block", "Power Hit", "Instant Death", "Extra Turn" };
         public Hero_Magik(string name = "Magic Warrior", int health = 75, int maxAttack = 16, int maxBlock = 6, int unitHealth = 75,
             string[] attack_spell = null, string[] defence_spell = null)
             :base(name, health, maxAttack, maxBlock, unitHealth) 
@@ -21,9 +20,7 @@ namespace OOPpractice2
 
         public override int AttackStrength(Hero hero_def)
         {
-            //int count = 0; // podwója próba przy instant death ??
             string attack_spell = "Magik did not manage to sccesfully cast a spell this time";
-            //string attack_spell = AtackSpellName();
             int choice = random.Next(0, 10);
             if ((choice == 9) || (choice == 6))
             {

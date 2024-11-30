@@ -19,7 +19,7 @@ namespace OOPpractice2
             // zatem usune losowanie kto ma pierwszą rundę
             // 
 
-            result = Game.Fight(magik, zwinny, 1, 4);
+            // result = Game.Fight(magik, zwinny, 1, 4);
             // result = Game.Fight(magik, wojownik, 1, 1);
             // result = Game.Fight(magik, wielgus, 1, 1);
 
@@ -33,7 +33,7 @@ namespace OOPpractice2
             // result = Game.Fight(wielgus, magik, 1, 1);
             // result = Game.Fight(wielgus, wielgus, 1, 1);
 
-            // result = Game.Fight(wojownik, zwinny, 1 , 1);
+            result = Game.Fight(wojownik, zwinny, 1 , 1);
             // result = Game.Fight(wojownik, magik, 1, 1);
             // result = Game.Fight(wojownik, wielgus, 1, 1);
 

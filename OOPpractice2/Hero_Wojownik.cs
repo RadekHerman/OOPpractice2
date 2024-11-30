@@ -6,7 +6,7 @@ namespace OOPpractice2
     public class Hero_Wojownik : Hero,IPowerHit, IPowerBlock
     {
         static private Random random = new Random();
-        public Hero_Wojownik (string name = "Wojownik", int health = 150, int maxAttack = 41, int maxBlock = 41, int unitHealth = 150) : 
+        public Hero_Wojownik (string name = "Wojownik", int health = 150, int maxAttack = 51, int maxBlock = 41, int unitHealth = 150) : 
             base (name, health, maxAttack, maxBlock, unitHealth )
         {
 
@@ -15,7 +15,7 @@ namespace OOPpractice2
         public int PowerHit()
         {
             int rnd = random.Next(0, MaxAttack);
-            if ((rnd > 39) || (rnd < 5))
+            if ((rnd % 3 == 0) && (rnd > 25))
             {
                 Console.WriteLine($" {this.Name} PowerHIT {rnd * 4}");
                 return (rnd * 4);
