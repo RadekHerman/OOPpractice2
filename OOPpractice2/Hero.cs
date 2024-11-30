@@ -41,9 +41,9 @@ namespace OOPpractice2
         public virtual int BlockStrength()
 
         {
-            if (this is IPowerBlock powerHitObject)
+            if (this is IPowerBlock powerBlockObject)
             {
-                return powerHitObject.PowerBlock();
+                return powerBlockObject.PowerBlock();
 
             }
             return random.Next(0, MaxBlock);

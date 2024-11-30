@@ -42,7 +42,7 @@ namespace OOPpractice2
                 Console.WriteLine("XXXXX HERO DEFENDING XXXXXXXXXXXXXXXXXXXXXx");
                 for (int i = 1; i <= heroDefenceQty; i++)
                 {
-                    //Console.WriteLine($"Attack: {i}");
+                    Console.WriteLine($"Attack: {i}");
                     if (Combat(heroDefence, heroAttack))
                         return $"{heroDefence.Name} after {round} rounds";
                 }
